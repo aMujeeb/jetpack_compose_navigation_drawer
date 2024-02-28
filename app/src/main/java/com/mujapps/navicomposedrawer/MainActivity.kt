@@ -55,7 +55,6 @@ class MainActivity : ComponentActivity() {
 
     private val mViewModel by viewModels<MainViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         installSplashScreen().apply {
             //Operations during splash screen.. Even network calls like token validation
             //This Lambda function will keep splash screen alive until background functions are done
@@ -92,6 +91,7 @@ class MainActivity : ComponentActivity() {
                 zoomY.start()
             }
         }
+        super.onCreate(savedInstanceState)
         setContent {
             NaviComposeDrawerTheme {
                 // A surface container using the 'background' color from the theme
